@@ -7,6 +7,7 @@ const getAuthHeaders = () => {
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
+// User registration API call
 export const register = async (data) => {
   const res = await fetch(`${API_URL}/auth/register`, {
     method: 'POST',
