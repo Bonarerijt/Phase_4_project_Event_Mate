@@ -1,3 +1,4 @@
+// Base API URL for backend communication
 const API_URL = 'http://localhost:8000';
 
 const getAuthHeaders = () => {
