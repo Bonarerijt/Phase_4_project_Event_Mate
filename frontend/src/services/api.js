@@ -18,6 +18,7 @@ export const register = async (data) => {
   return res.json();
 };
 
+// User login API call
 export const login = async (data) => {
   const res = await fetch(`${API_URL}/auth/login`, {
     method: 'POST',
