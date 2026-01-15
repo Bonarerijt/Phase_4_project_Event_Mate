@@ -122,3 +122,18 @@ def create_sample_data():
             db.add(review)
         db.commit()
         print("Created 3 reviews")
+
+        print("\n Sample data created successfully!")
+        print("\n Test Credentials:")
+        print("   Email: john@example.com | Password: pass123")
+        print("   Email: jane@example.com | Password: pass123")
+        print("   Email: mike@example.com | Password: pass123")
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        db.rollback()
+    finally:
+        db.close()
+
+if __name__ == "__main__":
+    create_sample_data()
