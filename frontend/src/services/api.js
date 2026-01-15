@@ -63,6 +63,7 @@ export const createEvent = async (data) => {
   return res.json();
 };
 
+// Update existing event
 export const updateEvent = async (id, data) => {
   const res = await fetch(`${API_URL}/events/${id}`, {
     method: 'PATCH',
