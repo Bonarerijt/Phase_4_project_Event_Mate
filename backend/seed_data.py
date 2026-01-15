@@ -12,7 +12,32 @@ def create_sample_data():
     db = SessionLocal()
     
     try:
-        # Check if data already exists
         if db.query(User).first():
             print("Database already has data. Skipping...")
             return
+        
+        users = [
+            User(
+                name="John Doe",
+                email="john@example.com",
+                password_hash=get_password_hash("pass123"),
+                role="user"
+            ),
+            User(
+                name="Jane Smith",
+                email="jane@example.com",
+                password_hash=get_password_hash("pass123"),
+                role="user"
+            ),
+            User(
+                name="Mike Johnson",
+                email="mike@example.com",
+                password_hash=get_password_hash("pass123"),
+                role="user"
+            )
+        ]
+        
+        for user in users:
+            db.add(user)
+        db.commit()
+        print("Created 3 users")
