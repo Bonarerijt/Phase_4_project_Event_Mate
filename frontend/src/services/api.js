@@ -45,6 +45,7 @@ export const getEvents = async () => {
   return res.json();
 };
 
+// Fetch single event by ID
 export const getEvent = async (id) => {
   const res = await fetch(`${API_URL}/events/${id}`);
   if (!res.ok) throw new Error(await res.text());
