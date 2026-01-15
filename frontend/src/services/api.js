@@ -83,6 +83,7 @@ export const deleteEvent = async (id) => {
   if (!res.ok) throw new Error(await res.text());
 };
 
+// Join an event as a participant
 export const joinEvent = async (eventId) => {
   const res = await fetch(`${API_URL}/participation`, {
     method: 'POST',
