@@ -11,4 +11,8 @@ def create_sample_data():
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     
-
+    try:
+        # Check if data already exists
+        if db.query(User).first():
+            print("Database already has data. Skipping...")
+            return
