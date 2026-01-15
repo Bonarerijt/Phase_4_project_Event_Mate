@@ -6,3 +6,5 @@ from ..models.event import Event
 from ..models.user import User
 from ..schemas.review import ReviewCreate, ReviewResponse
 from ..utils.dependencies import get_current_user
+
+router = APIRouter(prefix="/reviews", tags=["Reviews"])
